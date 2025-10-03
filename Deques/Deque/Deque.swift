@@ -6,7 +6,7 @@ public struct Deque<Element> {
     internal var _storage: _Storage
     
     @inlinable
-    public init() {
-        _storage = _Storage()
+    public init(minimumCapacity: Int) {
+        _storage = _Storage(capacity: minimumCapacity)
     }
 }

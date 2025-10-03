@@ -5,7 +5,7 @@ extension Deque {
     internal final class _Storage {
         
         @usableFromInline
-        internal init() {}
+        internal init(capacity: Int) {}
         
         deinit {}
     }
