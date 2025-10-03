@@ -1,3 +1,7 @@
 
 @frozen
-public struct Deque<Element> {}
+public struct Deque<Element> {
+    
+    @usableFromInline
+    internal var _storage: _Storage
+}
