@@ -1,7 +1,6 @@
 
 extension Deque {
     
-    @frozen
     @usableFromInline
-    internal struct _Storage {}
+    internal final class _Storage {}
 }
