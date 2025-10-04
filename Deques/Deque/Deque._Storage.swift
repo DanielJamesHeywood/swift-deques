@@ -34,3 +34,11 @@ extension Deque {
         }
     }
 }
+
+extension Deque._Storage {
+    
+    @inlinable
+    internal var count: Int {
+        return _count
+    }
+}
