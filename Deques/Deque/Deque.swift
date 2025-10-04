@@ -7,6 +7,6 @@ public struct Deque<Element> {
     
     @inlinable
     public init(minimumCapacity: Int) {
-        _storage = _Storage(capacity: minimumCapacity)
+        _storage = _Storage(minimumCapacity: minimumCapacity)
     }
 }
