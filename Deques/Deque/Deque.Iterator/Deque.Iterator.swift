@@ -13,7 +13,7 @@ extension Deque {
         @inlinable
         internal init(_base: Deque) {
             _baseStorage = _base._storage
-            _nextIndex = _base._storage.startIndex
+            _nextIndex = _baseStorage.startIndex
         }
     }
 }

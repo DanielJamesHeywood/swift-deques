@@ -18,9 +18,8 @@ extension Deque {
         
         @usableFromInline
         internal init(minimumCapacity: Int) {
-            let capacity = max(minimumCapacity, 1)
-            _capacity = capacity
-            _unsafeMutablePointerToElements = .allocate(capacity: capacity)
+            _capacity = max(minimumCapacity, 1)
+            _unsafeMutablePointerToElements = .allocate(capacity: _capacity)
         }
         
         deinit {
