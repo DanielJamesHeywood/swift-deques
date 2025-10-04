@@ -38,6 +38,12 @@ extension Deque {
 extension Deque._Storage {
     
     @inlinable
+    public subscript(position: Int) -> Element {
+        precondition(position >= 0 && position < _count)
+        return _unsafeMutablePointerToElements[(_offset + position) % _capacity]
+    }
+    
+    @inlinable
     internal var count: Int {
         return _count
     }
