@@ -2,5 +2,7 @@
 extension Deque.Iterator: CustomReflectable {
     
     @inlinable
-    public var customMirror: Mirror { Mirror(self, children: EmptyCollection()) }
+    public var customMirror: Mirror {
+        return Mirror(self, children: EmptyCollection())
+    }
 }
