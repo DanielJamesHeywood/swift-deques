@@ -37,14 +37,28 @@ extension Deque {
 
 extension Deque._Storage {
     
+    internal typealias Index = Int
+    
     @inlinable
-    public subscript(position: Int) -> Element {
-        precondition(position >= 0 && position < _count)
-        return _unsafeMutablePointerToElements[(_offset + position) % _capacity]
+    internal var startIndex: Int {
+        return _offset
     }
     
     @inlinable
-    internal var count: Int {
-        return _count
+    internal var endIndex: Int {
+        return _offset + _count
+    }
+    
+    internal typealias Indices = Range<Int>
+    
+    @inlinable
+    internal var indices: Range<Int> {
+        return startIndex..<endIndex
+    }
+    
+    @inlinable
+    internal subscript(position: Int) -> Element {
+        precondition(indices.contains(position))
+        return _unsafeMutablePointerToElements[position % _capacity]
     }
 }

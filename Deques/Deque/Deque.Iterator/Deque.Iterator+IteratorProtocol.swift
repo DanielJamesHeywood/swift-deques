@@ -3,7 +3,7 @@ extension Deque.Iterator: IteratorProtocol {
     
     @inlinable
     public mutating func next() -> Element? {
-        guard _nextIndex < _baseStorage.count else {
+        guard _nextIndex != _baseStorage.endIndex else {
             return nil
         }
         defer {

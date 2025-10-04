@@ -8,11 +8,12 @@ extension Deque {
         internal let _baseStorage: _Storage
         
         @usableFromInline
-        internal var _nextIndex = 0
+        internal var _nextIndex: Int
         
         @inlinable
         internal init(_base: Deque) {
             _baseStorage = _base._storage
+            _nextIndex = _base._storage.startIndex
         }
     }
 }
